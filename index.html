@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>News home page</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <img src="assets/images/logo.svg" alt="Logo">
+            <ul>
+                <li class="HideOnMobile"><a href="#">Home</a></li>
+                <li class="HideOnMobile"><a href="#">New</a></li>
+                <li class="HideOnMobile"><a href="#">Popular</a></li>
+                <li class="HideOnMobile"><a href="#">Trending</a></li>
+                <li class="HideOnMobile"><a href="#">Categories</a></li>
+                <li class="HideInDesktop" style="padding: 0;" onclick=showsidebar()><svg
+                        xmlns="http://www.w3.org/2000/svg" height="50" viewBox="0 -960 969 960" width="50">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg></li>
+            </ul>
+            <ul class="sidebar">
+                <li class="close"><svg onclick=closesidebar() style=" fill:'black' " xmlns="http://www.w3.org/2000/svg"
+                        height="40" viewBox="0 -960 960 960" width=' 50'>
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg></li>
+                <li class="bg_color"><a href="#">Home</a></li>
+                <li class="bg_color"><a href="#">New</a></li>
+                <li class="bg_color"><a href="#">Popular</a></li>
+                <li class="bg_color"><a href="#">Trending</a></li>
+                <li class="bg_color"><a href="#">Categories</a></li>
+            </ul>
+        </nav>
+        <section class="one">
+            <div class="div_right">
+                <div class="div_right_img">
+
+                </div>
+                <div class="div_right_content">
+                    <div class="div_content_right">
+                        <h2>the bright future of web 3.0?</h2>
+                    </div>
+                    <div class="div_content_left">
+                        <p>
+                            we dive into the next evolution of the web that claims to put the power of the platforms
+                            back into the hands of the people. but is really fulfillng its promise?
+                        </p>
+                        <button>read more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="div_left">
+                <h3 class="title">New</h3>
+                <div class="div_left_content">
+                    <h3>hydrogen <font style="text-transform: uppercase;">vs</font> elctric cars</h3>
+                    <p>will hydrogen-fueled cars ever catch up to <font style="text-transform: uppercase;">ev</font>s
+                    </p>
+                </div>
+                <div class="div_left_content">
+                    <h3>the downsides of al artistry</h3>
+                    <p>what are the possible adverse effects of on-demand al image generation?</p>
+                </div>
+                <div class="div_left_content non_border">
+                    <h3>is <font style="text-transform: uppercase;">vc</font>funding drying up?</h3>
+                    <p>private funding by <font style="text-transform: uppercase;">vc</font> firms is down 50% <font
+                            style="text-transform: uppercase;">yoy</font>. we take a look at what that means.</p>
+                </div>
+            </div>
+        </section>
+        <section class="two">
+            <div class="start">
+                <div class="start_img"></div>
+                <div class="content">
+                    <h2>01</h2>
+                    <h3>reviving retro <font style="text-transform: uppercase;">pc</font>s</h3>
+                    <p>what happens when old <font style="text-transform: uppercase;">pc</font>s are given modern
+                        upgrades</p>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="middle_img"></div>
+                <div class=" content">
+                    <h2>02</h2>
+                    <h3>top 10 laptops of 2022</h3>
+                    <p>our best picks for various needs and budgets</p>
+                </div>
+            </div>
+            <div class="end">
+                <div class="end_img"></div>
+                <div class="content">
+                    <h2>03</h2>
+                    <h3>the growth of gaming</h3>
+                    <p>how the pandemic has sparked fresh opportunities</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        const sidebar = document.querySelector('.sidebar')
+        function showsidebar() {
+            sidebar.style.right = '0';
+            document.body.style.backgroundColor = 'rgba(177, 169, 169, 0.514)';
+        }
+        function closesidebar() {
+            sidebar.style.right = '-100%';
+            document.body.style.backgroundColor = 'white'
+        }
+        function handleClick(event) {
+            var clickX = event.clientX;
+            if (clickX <= window.innerWidth * .25) {
+                closesidebar();
+            }
+        }
+        document.body.addEventListener('click', handleClick);
+    </script>
+</body>
+
+</html>
